@@ -20,22 +20,20 @@ document.querySelector("#pause").addEventListener("click", function() {
 
 document.querySelector("#slower").addEventListener("click", function() {
 	console.log("Slow Down 5%. New speed is " + video.defaultPlaybackRate);
-	video.defaultPlaybackRate *= 0.95;
+	video.defaultPlaybackRate -= 0.05;
 	video.load();
 });
 
 document.querySelector("#faster").addEventListener("click", function() {
 	console.log("Speed Up 5%. New speed is " + video.defaultPlaybackRate);
-	video.defaultPlaybackRate *= 1.05;
+	video.defaultPlaybackRate += 0.05;
 	video.load();
 });
 
 document.querySelector("#skip").addEventListener("click", function() {
 	console.log("Skipping Ahead 15 seconds to " + video.currentTime);
 	video.currentTime += 15;
-	if (video.currentTime == video.duration) {
-		video.play();
-	};
+	video.loop = true;
 });
 
 document.querySelector("#mute").addEventListener("click", function() {
