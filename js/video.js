@@ -7,6 +7,7 @@ window.addEventListener("load", function() {
 document.querySelector("#play").addEventListener("click", function() {
 	console.log("Play Video");
 	video.play();
+	// for applying volume change to video
 	var volumeVal = document.querySelector("#slider").value;
 	video.volume = volumeVal / 100;
 	volume.innerHTML = (volumeVal + "%");
