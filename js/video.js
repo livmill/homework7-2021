@@ -2,7 +2,6 @@ var video = document.querySelector("#player1");
 
 window.addEventListener("load", function() {
 	console.log("Good job opening the window")
-
 });
 
 document.querySelector("#play").addEventListener("click", function() {
@@ -40,9 +39,21 @@ document.querySelector("#skip").addEventListener("click", function() {
 
 document.querySelector("#mute").addEventListener("click", function() {
 	console.log("Mute");
-	video.muted = true;
 	video.load();
+	if (video.muted === false) {
+		var button = document.getElementById("mute");
+		button.value = 'Unmute';
+		button.innerHTML = 'Unmute';
+		video.muted = true;
+	}
+	else {
+		var button = document.getElementById("mute");
+		button.value = 'Mute';
+		button.innerHTML = 'Mute';
+		video.muted = false;
+	}
 });
+
 
 document.querySelector("#slider").addEventListener("click", function() {
 	console.log("Changing video volume")
