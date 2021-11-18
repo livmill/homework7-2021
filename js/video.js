@@ -20,13 +20,13 @@ document.querySelector("#pause").addEventListener("click", function() {
 
 document.querySelector("#slower").addEventListener("click", function() {
 	console.log("Slow Down 5%. New speed is " + video.defaultPlaybackRate);
-	video.defaultPlaybackRate -= 0.05;
+	video.defaultPlaybackRate *= 0.95;
 	video.load();
 });
 
 document.querySelector("#faster").addEventListener("click", function() {
 	console.log("Speed Up 5%. New speed is " + video.defaultPlaybackRate);
-	video.defaultPlaybackRate += 0.05;
+	video.defaultPlaybackRate *= 1.95;
 	video.load();
 });
 
