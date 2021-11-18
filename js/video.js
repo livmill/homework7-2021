@@ -31,9 +31,17 @@ document.querySelector("#faster").addEventListener("click", function() {
 });
 
 document.querySelector("#skip").addEventListener("click", function() {
-	console.log("Skipping Ahead 15 seconds to " + video.currentTime);
-	video.currentTime += 15;
-	video.loop = true;
+	console.log("Video at " + video.currentTime);
+	if (video.duration - 15 > video.currentTime) {
+		video.currentTime += 15;
+		console.log("Skipping to " + video.currentTime);
+	}
+	else {
+		// reset
+		console.log("Reset to start of video");
+		video.currentTime = 0;
+	}
+	
 });
 
 document.querySelector("#mute").addEventListener("click", function() {
